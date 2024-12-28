@@ -9,50 +9,50 @@ const data = [
     },
       {
         day: 7,
-        stake: 5000,
-        return: 10260,
+        stake: 10000,
+        return: 20260,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
     {
         day: 6,
-        stake: 5000,
-        return: 10260,
+        stake: 1400,
+        return: 2950,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
      {
         day: 5,
-        stake: 5000,
-        return: 10260,
+        stake: 9000,
+        return: 18210,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
     {
         day: 4,
-        stake: 5000,
-        return: 10260,
+        stake: 100000,
+        return: 201060,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
     {
         day: 3,
-        stake: 5000,
-        return: 10260,
+        stake: 1000,
+        return: 20200,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
     {
         day: 2,
-        stake: 5000,
-        return: 10260,
+        stake: 500,
+        return: 1060,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
     {
         day: 1,
-        stake: 5000,
-        return: 10260,
+        stake: 100,
+        return: 215,
         Match1: 'Man u vs Wolves',
         Match2: 'Atlanta Vs Napoli'
     },
