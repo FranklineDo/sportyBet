@@ -3,8 +3,8 @@ const data = [
     {
         day: 8,
         month:'Dec',
-        stake: '5,000.00',
-        return: '11,260.12',
+        stake: '120.00',
+        return: '212.99',
         Match1: 'chelsea Fc vs Arsenal Fc',
         Match2: 'Atlanta Vs Napoli',
         win: true
