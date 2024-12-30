@@ -8,9 +8,9 @@ const BetHistory: React.FC = () => {
     return (
     
           <div className="  -mb-16 flex bg-customBg " key={data.day}>
-            <h3 className=" size-10 mr-6 font-medium text-zinc-500 pt-5 pl-4">
+            <h3 className=" size-10 mr-6 font-medium text-zinc-400 pt-5 pl-4">
               <p>{data.day}</p>
-              <p>{data.month}</p>
+              <p className=" text-xs">{data.month}</p>
             </h3>
         
             <div className=" p-3 rounded-md mb-4 pr-0">
@@ -24,7 +24,7 @@ const BetHistory: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-sm text-gray-400 mt-1">
                   <span>Total Return</span>
-                  <span className=" text-green-600 font-bold">{ data.return}</span>
+                  <span className=" text-greencolor font-bold">{ data.return}</span>
                 </div>
                 <hr className=" mb-2 mt-1 border-zinc-700" />
                 <h2 className="text-gray-400 text-sm mb-2">{data.Match1 }</h2>
