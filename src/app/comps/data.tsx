@@ -1,5 +1,4 @@
 const data = [
-  
     {
         day: '30',
         month:'Dec',

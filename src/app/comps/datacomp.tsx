@@ -28,7 +28,6 @@ const BetHistory: React.FC = () => {
                 </div>
                 <hr className=" mb-2 mt-1 border-zinc-700" />
                 <h2 className="text-gray-400 text-xs mb-2">{data.Match1 }</h2>
-                <h2 className="text-gray-400 text-xs mb-2">{ data.Match2}</h2>
                 <hr className=" mb-2 mt-1 border-zinc-700" />
               </div>
             </div>
