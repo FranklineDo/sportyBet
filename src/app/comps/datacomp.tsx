@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Data from './data'
-import style from './datacomp.module.css'
+
 const BetHistory: React.FC = () => {
   const data = Data.map(data => {
     return (
