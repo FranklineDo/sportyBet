@@ -2,12 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import Data from './data'
-
+import style from './datacomp.module.css'
 const BetHistory: React.FC = () => {
   const data = Data.map(data => {
     return (
     
-          <div className="  -mb-16 flex bg-customBg " key={data.day}>
+          <div className=' -mb-16 flex bg-customBg' key={data.day}>
             <h3 className=" size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
               <p>{data.day}</p>
               <p className=" text-xs">{data.month}</p>
@@ -40,6 +40,7 @@ const BetHistory: React.FC = () => {
     return (
       <div>
         {data}
+        <Image src='/more.jpg' alt="wee" width={1000} height={1000} className=" mt-5"/>
       </div>
     )
 };
