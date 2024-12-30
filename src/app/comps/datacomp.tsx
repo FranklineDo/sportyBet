@@ -15,7 +15,7 @@ const BetHistory: React.FC = () => {
             <div className=" p-3 rounded-md mb-4 pr-0">
               <div className="p-2 rounded-md mb-3">
                 <div className="flex justify-between text-sm">
-                  <Image src='/sportywon.jpg' width={1000} height={1000} alt="kk" />
+              {data.win ? (<Image src='/multiplewin.jpg' width={1000} height={1000} alt="kk" />) : (<Image src='/multiplelosejpg.jpg' width={1000} height={1000} alt="kk" />)}
                 </div>
                 <div className="flex justify-between text-sm text-gray-400 mt-1">
                   <span>Total Stake(NGN)</span>
