@@ -1,16 +1,16 @@
 const data = [
   
     {
-        day: 8,
+        day: '30',
         month:'Dec',
         stake: '120.00',
-        return: '212.99',
+        return: '195.30',
         Match1: 'chelsea Fc vs Arsenal Fc',
         Match2: 'Atlanta Vs Napoli',
         win: true
     },
       {
-          day: 7,
+          day: '07',
           month:'Dec',
         stake: '10,000.00',
         return: '20,260.63',
@@ -19,7 +19,7 @@ const data = [
         win: true
     },
     {
-        day: 6,
+        day: '06',
         month:'Dec',
         stake: '1,400.00',
         return: '0.00',
@@ -28,7 +28,7 @@ const data = [
         win: false
     },
      {
-         day: 5,
+         day: '05',
          month:'Dec',
         stake: '9,000.00',
         return: '0.00',
@@ -37,7 +37,7 @@ const data = [
         win: false
     },
     {
-        day: 4,
+        day: '04',
         month:'Dec',
         stake: '100,000.00',
         return: '201,060.02',
@@ -46,7 +46,7 @@ const data = [
         win: true
     },
     {
-        day: 3,
+        day: '03',
         month:'Dec',
         stake: '1,000.00',
         return: '20,200.17',
@@ -55,7 +55,7 @@ const data = [
         win: true
     },
     {
-        day: 2,
+        day: '02',
         month:'Dec',
         stake: '500.00',
         return: '0.00',
@@ -64,7 +64,7 @@ const data = [
         win:false
     },
     {
-        day: 1,
+        day: '01',
         month:'Dec',
         stake: '100.00',
         return: '0.00',

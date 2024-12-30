@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         customBg: "#1b1e25",
-        greencolor: "#18C118",
+        greencolor: "#32CD32"
       },
     },
   },
