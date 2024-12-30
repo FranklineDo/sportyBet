@@ -8,7 +8,7 @@ const BetHistory: React.FC = () => {
     return (
     
           <div className="  -mb-16 flex bg-customBg " key={data.day}>
-            <h3 className=" size-10 mr-2 font-medium text-zinc-400 pt-5 pl-4">
+            <h3 className=" size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
               <p>{data.day}</p>
               <p className=" text-xs">{data.month}</p>
             </h3>
