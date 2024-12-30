@@ -7,13 +7,13 @@ const BetHistory: React.FC = () => {
   const data = Data.map(data => {
     return (
     
-          <div className=' -mb-16 flex bg-customBg' key={data.day}>
+          <div className=' -mb-16 flex bg-customBg ' key={data.day}>
             <h3 className=" size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
               <p>{data.day}</p>
               <p className=" text-xs">{data.month}</p>
             </h3>
         
-            <div className=" p-3 rounded-md mb-4 pr-0">
+            <div className=" p-3 pl-6 rounded-md mb-4 pr-0">
               <div className="p-2 rounded-md mb-3">
                 <div className="flex justify-between text-sm">
               {data.win ? (<Image src='/multiplewin.jpg' width={1000} height={1000} alt="kk" />) : (<Image src='/multiplelosejpg.jpg' width={1000} height={1000} alt="kk" />)}
@@ -40,7 +40,7 @@ const BetHistory: React.FC = () => {
     return (
       <div>
         {data}
-        <Image src='/more.jpg' alt="wee" width={1000} height={1000} className=" mt-5"/>
+        <Image src='/more.jpg' alt="wee" width={1000} height={100} className="mt-5 ml-0 "/>
       </div>
     )
 };
