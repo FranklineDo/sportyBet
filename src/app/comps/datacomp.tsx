@@ -38,6 +38,7 @@ const BetHistory: React.FC = () => {
   };
 
   const data = Data.map((data, index) => (
+    <div className=" bg-red-700">
     <div
       className="relative overflow-hidden"
       key={data.day}
@@ -48,7 +49,7 @@ const BetHistory: React.FC = () => {
       style={{ cursor: "grab" }}
     >
       {/* Sliding Content */}
-      <div className=" bg-red-700">
+      
       <div className="relative flex items-center bg-customBg">
         <h3 className="size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
           <p>{data.day}</p>
