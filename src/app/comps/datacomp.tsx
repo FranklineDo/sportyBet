@@ -38,7 +38,7 @@ const BetHistory: React.FC = () => {
   };
 
   const data = Data.map((data, index) => (
-    <div className=" bg-red-700">
+    <div className=" bg-red-700 pb-6">
     <div
       className="relative overflow-hidden"
       key={data.day}
