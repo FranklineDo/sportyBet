@@ -41,8 +41,8 @@ const BetHistory: React.FC = () => {
 
       {/* Sliding Content */}
       <div
-        className={`relative flex items-center bg-customBg transition-transform duration-700 ease-in-out ${
-          activeIndex === index ? "-translate-x-full" : ""
+        className={`relative flex items-center bg-customBg transition-transform duration-900 ease-in-out ${
+          activeIndex === index ? "-translate-x-8" : ""
         }`}
       >
         <h3 className="size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
