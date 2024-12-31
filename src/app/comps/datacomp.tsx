@@ -5,45 +5,46 @@ import Image from "next/image";
 import Data from "./data";
 
 const BetHistory: React.FC = () => {
-  const [dragged, setDragged] = useState<number>(0);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  const [dragOffset, setDragOffset] = useState<number>(0);
 
-  const handleDragStart = (e: React.DragEvent, index: number) => {
-    setActiveIndex(index);
-    setDragged(e.clientX); // Set the starting position
+  const handleMouseDown = (e: React.MouseEvent, index: number) => {
+    setDraggedIndex(index);
+    setDragOffset(e.clientX); // Capture the initial mouse position
   };
 
-  const handleDrag = (e: React.DragEvent) => {
-    if (activeIndex !== null) {
-      const distance = e.clientX - dragged;
-      const draggableItem = document.getElementById(`item-${activeIndex}`);
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (draggedIndex !== null) {
+      const distance = e.clientX - dragOffset;
+      const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
-        draggableItem.style.transform = `translateX(${Math.min(0, distance)}px)`;
+        draggableItem.style.transform = `translateX(${distance}px)`; // Move the item
       }
     }
   };
 
-  const handleDragEnd = () => {
-    if (activeIndex !== null) {
-      const draggableItem = document.getElementById(`item-${activeIndex}`);
+  const handleMouseUp = () => {
+    if (draggedIndex !== null) {
+      const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
-        draggableItem.style.transform = "translateX(0)"; // Reset position
-        draggableItem.style.transition = "transform 0.3s ease-out"; // Smooth return
+        draggableItem.style.transition = "transform 0.3s ease-out"; // Add smooth return
+        draggableItem.style.transform = "translateX(0px)"; // Reset position
       }
     }
-    setDragged(0);
-    setActiveIndex(null);
+    setDraggedIndex(null); // Reset state
+    setDragOffset(0);
   };
 
   const data = Data.map((data, index) => (
     <div
       className="relative overflow-hidden"
       key={data.day}
-      draggable
       id={`item-${index}`}
-      onDragStart={(e) => handleDragStart(e, index)}
-      onDrag={(e) => handleDrag(e)}
-      onDragEnd={handleDragEnd}
+      onMouseDown={(e) => handleMouseDown(e, index)}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp} // Ensure reset when dragging out of bounds
+      style={{ cursor: "grab" }}
     >
       {/* Red Background */}
       <div className="absolute top-0 left-0 h-full w-full bg-red-500"></div>
@@ -102,7 +103,7 @@ const BetHistory: React.FC = () => {
   ));
 
   return (
-    <div>
+    <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
       {data}
       <Image
         src="/more.jpg"
