@@ -6,16 +6,18 @@ import Data from "./data";
 
 const BetHistory: React.FC = () => {
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [dragOffset, setDragOffset] = useState<number>(0);
+  const [dragStartX, setDragStartX] = useState<number>(0);
 
-  const handleMouseDown = (e: React.MouseEvent, index: number) => {
+  const handleTouchStart = (e: React.TouchEvent, index: number) => {
     setDraggedIndex(index);
-    setDragOffset(e.clientX); // Capture the initial mouse position
+    setDragStartX(e.touches[0].clientX); // Capture the initial touch position
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     if (draggedIndex !== null) {
-      const distance = e.clientX - dragOffset;
+      const touchX = e.touches[0].clientX;
+      const distance = touchX - dragStartX;
+
       const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
         draggableItem.style.transform = `translateX(${distance}px)`; // Move the item
@@ -23,7 +25,7 @@ const BetHistory: React.FC = () => {
     }
   };
 
-  const handleMouseUp = () => {
+  const handleTouchEnd = () => {
     if (draggedIndex !== null) {
       const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
@@ -32,7 +34,7 @@ const BetHistory: React.FC = () => {
       }
     }
     setDraggedIndex(null); // Reset state
-    setDragOffset(0);
+    setDragStartX(0);
   };
 
   const data = Data.map((data, index) => (
@@ -40,10 +42,9 @@ const BetHistory: React.FC = () => {
       className="relative overflow-hidden"
       key={data.day}
       id={`item-${index}`}
-      onMouseDown={(e) => handleMouseDown(e, index)}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp} // Ensure reset when dragging out of bounds
+      onTouchStart={(e) => handleTouchStart(e, index)}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       style={{ cursor: "grab" }}
     >
       {/* Red Background */}
@@ -103,7 +104,7 @@ const BetHistory: React.FC = () => {
   ));
 
   return (
-    <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
+    <div>
       {data}
       <Image
         src="/more.jpg"
