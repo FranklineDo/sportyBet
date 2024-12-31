@@ -1,27 +1,38 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Data from "./data";
 
 const BetHistory: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [dragged, setDragged] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleDragStart = (e: React.DragEvent, index: number) => {
     setActiveIndex(index);
-    setDragged(e.clientX); // Capture initial drag position
+    setDragged(e.clientX); // Set the starting position
   };
 
-  const handleDragEnd = (e: React.DragEvent, index: number) => {
-    const dragDistance = dragged - e.clientX;
-
-    // Check if the drag distance exceeds a threshold for a valid slide
-    if (dragDistance > 100) {
-      setActiveIndex(index); // Trigger the slide
-    } else {
-      setActiveIndex(null); // Reset to original position
+  const handleDrag = (e: React.DragEvent) => {
+    if (activeIndex !== null) {
+      const distance = e.clientX - dragged;
+      const draggableItem = document.getElementById(`item-${activeIndex}`);
+      if (draggableItem) {
+        draggableItem.style.transform = `translateX(${Math.min(0, distance)}px)`;
+      }
     }
-    setDragged(0); // Reset drag state
+  };
+
+  const handleDragEnd = () => {
+    if (activeIndex !== null) {
+      const draggableItem = document.getElementById(`item-${activeIndex}`);
+      if (draggableItem) {
+        draggableItem.style.transform = "translateX(0)"; // Reset position
+        draggableItem.style.transition = "transform 0.3s ease-out"; // Smooth return
+      }
+    }
+    setDragged(0);
+    setActiveIndex(null);
   };
 
   const data = Data.map((data, index) => (
@@ -29,22 +40,16 @@ const BetHistory: React.FC = () => {
       className="relative overflow-hidden"
       key={data.day}
       draggable
+      id={`item-${index}`}
       onDragStart={(e) => handleDragStart(e, index)}
-      onDragEnd={(e) => handleDragEnd(e, index)}
+      onDrag={(e) => handleDrag(e)}
+      onDragEnd={handleDragEnd}
     >
       {/* Red Background */}
-      <div
-        className={`absolute top-0 left-full h-full w-full bg-red-500 transition-all duration-900 ease-in-out ${
-          activeIndex === index ? "left-0" : ""
-        }`}
-      ></div>
+      <div className="absolute top-0 left-0 h-full w-full bg-red-500"></div>
 
       {/* Sliding Content */}
-      <div
-        className={`relative flex items-center bg-customBg transition-transform duration-900 ease-in-out ${
-          activeIndex === index ? "-translate-x-44" : ""
-        }`}
-      >
+      <div className="relative flex items-center bg-customBg">
         <h3 className="size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
           <p>{data.day}</p>
           <p className="text-xs">{data.month}</p>
