@@ -34,14 +34,14 @@ const BetHistory: React.FC = () => {
     >
       {/* Red Background */}
       <div
-        className={`absolute top-0 left-full h-full w-full bg-red-500 transition-all duration-300 ease-in-out ${
+        className={`absolute top-0 left-full h-full w-full bg-red-500 transition-all duration-700 ease-in-out ${
           activeIndex === index ? "left-0" : ""
         }`}
       ></div>
 
       {/* Sliding Content */}
       <div
-        className={`relative flex items-center bg-customBg transition-transform duration-300 ease-in-out ${
+        className={`relative flex items-center bg-customBg transition-transform duration-700 ease-in-out ${
           activeIndex === index ? "-translate-x-full" : ""
         }`}
       >
