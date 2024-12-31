@@ -38,7 +38,7 @@ const BetHistory: React.FC = () => {
   };
 
   const data = Data.map((data, index) => (
-    <div className=" bg-red-700 pb-6">
+
     <div
       className="relative overflow-hidden"
       key={data.day}
@@ -100,12 +100,14 @@ const BetHistory: React.FC = () => {
         </div>
         </div>
          </div>
-    </div>
+  
   ));
 
   return (
     <div>
-      {data}
+          <div className=" bg-red-700 pb-6">
+        {data}
+        </div>
       <Image
         src="/more.jpg"
         alt="more"
