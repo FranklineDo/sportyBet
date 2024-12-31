@@ -47,10 +47,8 @@ const BetHistory: React.FC = () => {
       onTouchEnd={handleTouchEnd}
       style={{ cursor: "grab" }}
     >
-      {/* Red Background */}
-      <div className="absolute top-0 left-0 h-full w-full bg-red-500"></div>
-
       {/* Sliding Content */}
+      <div className=" bg-red-700">
       <div className="relative flex items-center bg-customBg">
         <h3 className="size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
           <p>{data.day}</p>
@@ -99,7 +97,8 @@ const BetHistory: React.FC = () => {
             <hr className="mb-2 mt-1 border-zinc-700" />
           </div>
         </div>
-      </div>
+        </div>
+         </div>
     </div>
   ));
 
@@ -110,7 +109,7 @@ const BetHistory: React.FC = () => {
         src="/more.jpg"
         alt="more"
         width={1000}
-        height={100}
+        height={1000}
         className="mt-5 ml-0"
       />
     </div>
