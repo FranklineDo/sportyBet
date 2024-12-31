@@ -1,26 +1,36 @@
 "use client"
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Data from "./data";
 
 const BetHistory: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [dragged, setDragged] = useState<number>(0);
 
-  const handleDragStart = (index: number) => {
+  const handleDragStart = (e: React.DragEvent, index: number) => {
     setActiveIndex(index);
+    setDragged(e.clientX); // Capture initial drag position
   };
 
-  const handleDragEnd = () => {
-    setActiveIndex(null);
+  const handleDragEnd = (e: React.DragEvent, index: number) => {
+    const dragDistance = dragged - e.clientX;
+
+    // Check if the drag distance exceeds a threshold for a valid slide
+    if (dragDistance > 100) {
+      setActiveIndex(index); // Trigger the slide
+    } else {
+      setActiveIndex(null); // Reset to original position
+    }
+    setDragged(0); // Reset drag state
   };
 
   const data = Data.map((data, index) => (
     <div
       className="relative overflow-hidden"
       key={data.day}
-      onTouchStart={() => handleDragStart(index)}
-      onTouchEnd={handleDragEnd}
+      draggable
+      onDragStart={(e) => handleDragStart(e, index)}
+      onDragEnd={(e) => handleDragEnd(e, index)}
     >
       {/* Red Background */}
       <div
