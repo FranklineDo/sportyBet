@@ -50,13 +50,13 @@ const BetHistory: React.FC = () => {
     >
       {/* Sliding Content */}
       
-      <div className="relative flex items-center bg-customBg">
-        <h3 className="size-10 mr-1 font-medium text-zinc-400 pt-5 pl-4">
+      <div className="relative flex items-center scroll bg-customBg">
+        <h3 className="size-10 mr-1 font-medium text-zinc-400 -mt-12 pl-4">
           <p>{data.day}</p>
           <p className="text-xs">{data.month}</p>
         </h3>
 
-        <div className="p-3 pl-6 rounded-md mb-4 pr-0">
+        <div className="p-3 pl-6 rounded-md -mb-7 pr-0 pb-0">
           <div className="p-2 rounded-md mb-3">
             <div className="flex justify-between text-sm">
               {data.win ? (
@@ -105,7 +105,7 @@ const BetHistory: React.FC = () => {
 
   return (
     <div>
-          <div className=" bg-red-700 pb-6">
+          <div className=" bg-red-700">
         {data}
         </div>
       <Image
@@ -113,7 +113,7 @@ const BetHistory: React.FC = () => {
         alt="more"
         width={1000}
         height={1000}
-        className="mt-5 ml-0"
+        className="mt-2 ml-0"
       />
     </div>
   );
