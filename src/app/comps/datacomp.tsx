@@ -52,7 +52,7 @@ const BetHistory: React.FC = () => {
       {/* Sliding Content */}
        <DeleteForeverTwoToneIcon className=' absolute top-16 left-80'  style={{ zIndex: -1 }}  />
       <div className=" -mt-2 flex items-center scroll bg-customBg">
-        <h3 className="size-10 mr-1 font-medium text-zinc-400 -mt-24 pl-4">
+        <h3 className="size-10 mr-1 font-bold text-zinc-400  -mt-24 pl-4">
           <p>{data.day}</p>
           <p className="text-xs">{data.month}</p>
         </h3>
