@@ -78,23 +78,23 @@ const BetHistory: React.FC = () => {
             </div>
             <div className="flex justify-between text-sm text-gray-400 mt-2">
               <span className="text-xs">Total Stake(NGN)</span>
-              <span className="text-white text-xs font-semibold">
+              <span className="text-white text-xs font-sans">
                 {data.stake}
               </span>
             </div>
             <div className="flex justify-between text-sm text-gray-400 mt-2">
-              <span className="text-xs">Total Return</span>
+              <span className="text-xs mt-1">Total Return</span>
               <span
                 className={
                   data.win
-                    ? "text-greencolor font-sans -mt-2 font-semibold text-lg"
+                    ? "text-greencolor font-sans -mt-2 pt-1 font-semibold text-lg"
                     : "text-gray-400 font-sans font-semibold text-xs"
                 }
               >
                 {data.return}
               </span>
             </div>
-            <hr className="mb-2 mt-1 border-zinc-800" />
+            <hr className="mb-2 mt-0 border-zinc-800" />
             <h2 className="text-gray-400 text-xs mb-2">{data.Match1}</h2>
             <h2 className="text-gray-400 text-xs mb-2">{data.Match2}</h2>
             <h2 className="text-gray-400 text-xs mb-2">{data.Match3}</h2>
