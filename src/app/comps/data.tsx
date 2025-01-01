@@ -1,18 +1,12 @@
 const data = [
     {
-        day: '30',
-        month:'Dec',
-        stake: '20.00',
-        return: '0.00',
-        Match1: 'Enppi Club v AL Ahly SC (Egy)',
-        win: false
-    },
-    {
-        day: '30',
-        month:'Dec',
-        stake: '20.00',
-        return: '0.00',
-        Match1: 'Enppi Club v AL Ahly SC (Egy)',
+        day: '01',
+        month:'',
+        stake: '7500',
+        return: '17,518.41',
+        Match1: 'Brentford FC v Arsenal',
+        Match2: 'Burnley v Stoke',
+        Match3: 'Plymouth Argyle v Bristol City',
         win: true
     }
 ]

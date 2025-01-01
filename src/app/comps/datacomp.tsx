@@ -51,8 +51,8 @@ const BetHistory: React.FC = () => {
     >
       {/* Sliding Content */}
        <DeleteForeverTwoToneIcon className=' absolute top-16 left-80'  style={{ zIndex: -1 }}  />
-      <div className="  flex items-center scroll bg-customBg">
-        <h3 className="size-10 mr-1 font-medium text-zinc-400 -mt-12 pl-4">
+      <div className=" -mt-2 flex items-center scroll bg-customBg">
+        <h3 className="size-10 mr-1 font-medium text-zinc-400 -mt-24 pl-4">
           <p>{data.day}</p>
           <p className="text-xs">{data.month}</p>
         </h3>
@@ -94,9 +94,11 @@ const BetHistory: React.FC = () => {
                 {data.return}
               </span>
             </div>
-            <hr className="mb-2 mt-1 border-zinc-700" />
+            <hr className="mb-2 mt-1 border-zinc-800" />
             <h2 className="text-gray-400 text-xs mb-2">{data.Match1}</h2>
-            <hr className="mb-2 mt-1 border-zinc-700" />
+            <h2 className="text-gray-400 text-xs mb-2">{data.Match2}</h2>
+            <h2 className="text-gray-400 text-xs mb-2">{data.Match3}</h2>
+            <hr className="mb-2 mt-1 border-zinc-800" />
           </div>
         </div>
         </div>
@@ -114,7 +116,7 @@ const BetHistory: React.FC = () => {
         alt="more"
         width={1000}
         height={1000}
-        className="mt-2 ml-0"
+        className="mt-3 ml-0"
       />
     </div>
   );
