@@ -6,6 +6,14 @@ const data = [
         return: '0.00',
         Match1: 'Enppi Club v AL Ahly SC (Egy)',
         win: false
+    },
+    {
+        day: '30',
+        month:'Dec',
+        stake: '20.00',
+        return: '0.00',
+        Match1: 'Enppi Club v AL Ahly SC (Egy)',
+        win: true
     }
 ]
  

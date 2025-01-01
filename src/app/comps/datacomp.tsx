@@ -1,5 +1,6 @@
 "use client";
 
+import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
 import React, { useState } from "react";
 import Image from "next/image";
 import Data from "./data";
@@ -49,8 +50,8 @@ const BetHistory: React.FC = () => {
       style={{ cursor: "grab" }}
     >
       {/* Sliding Content */}
-      
-      <div className="relative flex items-center scroll bg-customBg">
+       <DeleteForeverTwoToneIcon className=' absolute top-16 left-80'  style={{ zIndex: -1 }}  />
+      <div className="  flex items-center scroll bg-customBg">
         <h3 className="size-10 mr-1 font-medium text-zinc-400 -mt-12 pl-4">
           <p>{data.day}</p>
           <p className="text-xs">{data.month}</p>
@@ -104,8 +105,8 @@ const BetHistory: React.FC = () => {
   ));
 
   return (
-    <div>
-          <div className=" bg-red-700">
+    <div className=""> 
+      <div className=" bg-red-700">
         {data}
         </div>
       <Image
