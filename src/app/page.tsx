@@ -14,7 +14,7 @@ const staticbet: React.FC = () => {
 
           <BetHistory />
 </div>
-        <Image src='/sportyfooter.jpg' width={1000} alt="ok" height={1000} className="sticky mt-5 bottom-0 " />
+        <Image src='/sportyfoot.jpg' width={1000} alt="ok" height={1000} className="sticky mt-5 bottom-0 " />
     </div>
   );
 };
