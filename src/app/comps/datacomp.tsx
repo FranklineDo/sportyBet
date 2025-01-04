@@ -14,17 +14,20 @@ const BetHistory: React.FC = () => {
     setDragStartX(e.touches[0].clientX); // Capture the initial touch position
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (draggedIndex !== null) {
-      const touchX = e.touches[0].clientX;
-      const distance = touchX - dragStartX;
+const handleTouchMove = (e: React.TouchEvent) => {
+  if (draggedIndex !== null) {
+    const touchX = e.touches[0].clientX;
+    const distance = touchX - dragStartX;
 
+    if (distance >= 0) { // Allow movement only to the right
       const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
         draggableItem.style.transform = `translateX(${distance}px)`; // Move the item
       }
     }
-  };
+  }
+};
+
 
   const handleTouchEnd = () => {
     if (draggedIndex !== null) {
