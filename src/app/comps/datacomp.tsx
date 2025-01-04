@@ -19,7 +19,7 @@ const handleTouchMove = (e: React.TouchEvent) => {
     const touchX = e.touches[0].clientX;
     const distance = touchX - dragStartX;
 
-    if (distance >= 0) { // Allow movement only to the right
+    if (distance <= 0) { // Allow movement only to the left
       const draggableItem = document.getElementById(`item-${draggedIndex}`);
       if (draggableItem) {
         draggableItem.style.transform = `translateX(${distance}px)`; // Move the item
