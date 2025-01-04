@@ -10,7 +10,7 @@ const staticbet: React.FC = () => {
         {/* Tab Navigation */}
       <div className=" flex-1">
         <Image src='/urlmain.jpg' width={1000} alt="ok" height={1000} className="sticky bottom-0" />
-        <Image src='/headerrr.jpg' alt="head" width={1000} height={1000} className="sticky top-0 pb-1" />
+        <Image src='/headerrr.jpg' alt="head" width={1000} height={1000} className="sticky top-0 pb-1 "style={{ zIndex: 1 }} />
 
           <BetHistory />
 </div>
